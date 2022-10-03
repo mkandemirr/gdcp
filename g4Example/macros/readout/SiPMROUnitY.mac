@@ -1,0 +1,7 @@
+#This macro file is invoked from within the NuSDSiPMROUnitBuilder.cc
+/NuSD/readout/SiPMROUnitY/addPhotoSensorBinder false
+/NuSD/readout/SiPMROUnitY/addReflectorSurface true
+
+
+
+

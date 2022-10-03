@@ -1,0 +1,12 @@
+#################EJ-260 SCINTILLATOR MatProp#########################3
+/matPropTable/EJ-260/addProperty SCINTILLATIONCOMPONENT1 data/materials/Ej260_emissionSpect.txt
+/matPropTable/EJ-260/addProperty RINDEX data/materials/Ej260_refSpect.txt 1.58
+
+/matPropTable/EJ-260/addProperty WLSABSLENGTH data/materials/Ej260_absSpect.txt 350 cm
+/matPropTable/EJ-260/addProperty WLSCOMPONENT data/materials/Ej260_emissionSpect.txt 50 cm
+
+/matPropTable/EJ-260/addConstProperty SCINTILLATIONYIELD 10 1./MeV #9200
+/matPropTable/EJ-260/addConstProperty SCINTILLATIONYIELD1 1 
+/matPropTable/EJ-260/addConstProperty SCINTILLATIONTIMECONSTANT1 9.2 ns
+/matPropTable/EJ-260/addConstProperty SCINTILLATIONRISETIME1 1.51 ns
+/matPropTable/EJ-260/addConstProperty RESOLUTIONSCALE 1.0

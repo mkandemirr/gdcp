@@ -1,0 +1,8 @@
+
+
+#################Air Mat Prop#########################3
+
+/matPropTable/Air/addProperty RINDEX data/materials/Air_refSpect.txt 1.0
+/matPropTable/Air/addProperty ABSLENGTH data/materials/Air_absSpect.txt 300 cm
+
+

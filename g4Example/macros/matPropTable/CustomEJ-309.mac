@@ -1,0 +1,10 @@
+#################CustomEJ-309 SCINTILLATOR MatProp#########################
+/matPropTable/CustomEJ-309/addProperty SCINTILLATIONCOMPONENT1 data/materials/CustomEj309_emissionSpect.txt
+/matPropTable/CustomEJ-309/addProperty RINDEX data/materials/CustomEj309_refSpect.txt 1.57
+/matPropTable/CustomEJ-309/addProperty ABSLENGTH data/materials/CustomEj309_absSpect.txt 85 cm
+
+/matPropTable/CustomEJ-309/addConstProperty SCINTILLATIONYIELD 10 1./MeV #8200
+/matPropTable/CustomEJ-309/addConstProperty SCINTILLATIONYIELD1 1 
+/matPropTable/CustomEJ-309/addConstProperty SCINTILLATIONTIMECONSTANT1 3.5 ns
+/matPropTable/CustomEJ-309/addConstProperty SCINTILLATIONRISETIME1 0.9 ns
+/matPropTable/CustomEJ-309/addConstProperty RESOLUTIONSCALE 1.0

@@ -1,0 +1,31 @@
+#This macro file is invoked from within the SolidDetUnitBuilder.cc file.
+
+#prototype /NuSD/boxComponent/ComponentName/command value unit
+/NuSD/boxComponent/GammaScnt/xHalfLength 5 cm
+/NuSD/boxComponent/GammaScnt/yHalfLength 5 cm
+/NuSD/boxComponent/GammaScnt/zHalfLength 5 cm
+#/NuSD/boxComponent/GammaScnt/matName EJ-200
+
+#opt barrier.no impact since it dimension depends on neutrino scintilaltor
+/NuSD/boxComponent/OptBarrier/xHalfLength 1000 cm
+/NuSD/boxComponent/OptBarrier/yHalfLength 900 cm
+/NuSD/boxComponent/OptBarrier/zHalfLength 112 cm
+#/NuSD/boxComponent/OptBarrier/matName Air
+
+#Neutron scintillator.
+/NuSD/boxComponent/NeutronScnt/xHalfLength 1000 cm #no impact
+/NuSD/boxComponent/NeutronScnt/yHalfLength 25 um
+/NuSD/boxComponent/NeutronScnt/zHalfLength 112 cm #no impact
+#/NuSD/boxComponent/NeutronScnt/matName Air
+
+#reflector.no impact since it dimension depends on optBarrier
+/NuSD/boxComponent/Reflector/xHalfLength 400 cm
+/NuSD/boxComponent/Reflector/yHalfLength 330 cm
+/NuSD/boxComponent/Reflector/zHalfLength 1100 cm
+#/NuSD/boxComponent/Reflector/matName Air
+
+
+
+
+
+

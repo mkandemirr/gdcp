@@ -1,0 +1,8 @@
+
+
+#################Cement MatProp#########################3
+
+/matPropTable/Cement/addProperty RINDEX data/materials/Cement_refSpect.txt 1.57
+/matPropTable/Cement/addProperty ABSLENGTH data/materials/Cement_absSpect.txt 300 cm
+
+

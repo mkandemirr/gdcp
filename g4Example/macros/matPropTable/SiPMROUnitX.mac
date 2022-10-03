@@ -1,0 +1,6 @@
+/matPropTable/SiPMROUnitX/addProperty REFLECTIVITY data/reflectors/reflectivity.txt 1.0
+/matPropTable/SiPMROUnitX/addProperty EFFICIENCY data/reflectors/efficiency.txt 0.0
+
+
+
+

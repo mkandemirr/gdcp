@@ -1,0 +1,5 @@
+##############Optical Surface#################
+/opticalSurface/AluminizedMylar/surfaceType dielectric_dielectric
+/opticalSurface/AluminizedMylar/surfaceFinish polishedfrontpainted
+/opticalSurface/AluminizedMylar/surfaceModel unified
+#/opticalSurface/AluminizedMylar/surfacePolish 1.

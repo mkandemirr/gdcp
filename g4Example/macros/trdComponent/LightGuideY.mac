@@ -1,0 +1,13 @@
+
+##########LightGuide##############
+
+/NuSD/trdComponent/LightGuideY/x1HalfLength 2 cm
+/NuSD/trdComponent/LightGuideY/x2HalfLength 1500 cm
+/NuSD/trdComponent/LightGuideY/y1HalfLength 2 cm
+/NuSD/trdComponent/LightGuideY/y2HalfLength 1500 cm
+/NuSD/trdComponent/LightGuideY/zHalfLength  5 cm
+/NuSD/trdComponent/LightGuideY/matName Pmma
+
+
+
+

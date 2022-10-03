@@ -1,0 +1,8 @@
+
+
+#################Fep Mat Prop#########################3
+
+/matPropTable/Fep/addProperty RINDEX data/materials/Fep_refSpect.txt 1.344
+/matPropTable/Fep/addProperty ABSLENGTH data/materials/Fep_absSpect.txt 300 cm
+
+

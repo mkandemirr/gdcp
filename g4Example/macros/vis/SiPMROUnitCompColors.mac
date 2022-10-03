@@ -1,0 +1,23 @@
+ #This macro file is invoked from within the vis.mac file
+ 
+ /vis/geometry/set/colour MppcXLogic 0 red
+ /vis/geometry/set/colour MppcYLogic 0 red
+ /vis/geometry/set/colour MppcZLogic 0 red
+ /vis/geometry/set/colour MppcBinderXLogic 0 magenta
+ /vis/geometry/set/colour MppcBinderYLogic 0 magenta
+ /vis/geometry/set/colour MppcBinderZLogic 0 magenta
+ 
+ #makes all wire frame
+ #/vis/geometry/set/forceWireframe
+ 
+ /vis/geometry/set/forceSolid SiPMROUnitXLogic 0 false
+ /vis/geometry/set/forceSolid SiPMROUnitYLogic 0 false
+ /vis/geometry/set/forceSolid SiPMROUnitZLogic 0 false
+ 
+ /vis/geometry/set/forceSolid MppcBinderXLogic 0 true
+ /vis/geometry/set/forceSolid MppcBinderYLogic 0 true
+ /vis/geometry/set/forceSolid MppcBinderZLogic 0 true
+ 
+ /vis/geometry/set/forceSolid MppcXLogic 0 true
+ /vis/geometry/set/forceSolid MppcYLogic 0 true
+ /vis/geometry/set/forceSolid MppcZLogic 0 true

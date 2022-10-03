@@ -1,0 +1,27 @@
+##This macro file is invoked from within the NuSDDetectorBuilder.cc
+##This macro file should be rearranged for each detector type!
+
+#Two options are available: SiPM and PMT. 
+#SiPM is selected for the SOLID experiment, and PMT is selected for the PANDA experiment. Otherwise, you get error!
+/NuSD/detBuilder/photoSensorType SiPM
+
+/NuSD/detBuilder/numberOfSegmentAlongX 3
+/NuSD/detBuilder/numberOfSegmentAlongY 5
+/NuSD/detBuilder/numberOfSegmentAlongZ 8
+
+#x-axis
+/NuSD/detBuilder/addReadoutUnitX true
+/NuSD/detBuilder/addReadoutUnitXBothEnd true
+ 
+#y-axis
+/NuSD/detBuilder/addReadoutUnitY false
+/NuSD/detBuilder/addReadoutUnitYBothEnd true
+ 
+#z-axis
+/NuSD/detBuilder/addReadoutUnitZ true
+/NuSD/detBuilder/addReadoutUnitZBothEnd false
+ 
+
+
+
+

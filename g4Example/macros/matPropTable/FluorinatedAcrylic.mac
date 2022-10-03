@@ -1,0 +1,11 @@
+
+
+#################FluorinatedAcrylic Mat Prop#########################3
+#Clad1 material is Acrylic, namely it is PMMA
+#Apart from clad1 material(PMMA), clad2 includes fluor(scintillator), and it has a lower refractive index(1.42 vs 1.49) and 
+#slighlty higher density(1.2 vs 1.18)	
+
+/matPropTable/FluorinatedAcrylic/addProperty RINDEX data/materials/Pmma_refSpect.txt 1.42
+/matPropTable/FluorinatedAcrylic/addProperty ABSLENGTH data/materials/Pmma_absSpect.txt 300 cm
+
+

@@ -1,0 +1,13 @@
+ #This macro file is invoked from within the vis.mac file
+ 
+ /vis/geometry/set/colour GammaScntLogic 0 blue
+ /vis/geometry/set/colour NeutronScntLogic 0 brown
+ /vis/geometry/set/colour OptBarrierLogic 0 green
+ 
+ #makes all wire frame
+ #/vis/geometry/set/forceWireframe
+ 
+ #/vis/geometry/set/forceSolid DetUnitLogic 0 false
+ /vis/geometry/set/forceSolid GammaScntLogic 0 true
+ /vis/geometry/set/forceSolid OptBarrierLogic 0 false
+ 

@@ -1,0 +1,10 @@
+#################CustomEJ-254 SCINTILLATOR MatProp#########################3
+/matPropTable/CustomEJ-254/addProperty SCINTILLATIONCOMPONENT1 data/materials/CustomEj254_emissionSpect.txt
+/matPropTable/CustomEJ-254/addProperty RINDEX data/materials/CustomEj254_refSpect.txt 1.58
+/matPropTable/CustomEJ-254/addProperty ABSLENGTH data/materials/CustomEj254_absSpect.txt 50 cm
+
+/matPropTable/CustomEJ-254/addConstProperty SCINTILLATIONYIELD 10 1./MeV #7500
+/matPropTable/CustomEJ-254/addConstProperty SCINTILLATIONYIELD1 1 
+/matPropTable/CustomEJ-254/addConstProperty SCINTILLATIONTIMECONSTANT1 1.51 ns
+/matPropTable/CustomEJ-254/addConstProperty SCINTILLATIONRISETIME1 0.85 ns
+/matPropTable/CustomEJ-254/addConstProperty RESOLUTIONSCALE 1.0

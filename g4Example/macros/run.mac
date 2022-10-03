@@ -1,0 +1,5 @@
+##This macro file is invoked from within the Main.cc in the batch mode.
+/run/beamOn 2
+
+
+

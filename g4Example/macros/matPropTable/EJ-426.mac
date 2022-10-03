@@ -1,0 +1,10 @@
+#################EJ-426 SCINTILLATOR MatProp#########################3
+/matPropTable/EJ-426/addProperty SCINTILLATIONCOMPONENT1 data/materials/Ej426_emissionSpect.txt
+/matPropTable/EJ-426/addProperty RINDEX data/materials/Ej426_refSpect.txt 1.7
+/matPropTable/EJ-426/addProperty ABSLENGTH data/materials/Ej426_absSpect.txt 0.015 cm
+
+/matPropTable/EJ-426/addConstProperty SCINTILLATIONYIELD 10 1./MeV #40000./MeV
+/matPropTable/EJ-426/addConstProperty SCINTILLATIONYIELD1 1 
+/matPropTable/EJ-426/addConstProperty SCINTILLATIONTIMECONSTANT1 200 ns
+/matPropTable/EJ-426/addConstProperty SCINTILLATIONRISETIME1 1.5 ns
+/matPropTable/EJ-426/addConstProperty RESOLUTIONSCALE 1.0

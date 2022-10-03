@@ -1,0 +1,9 @@
+/opticalSurface/PmtROUnitX/surfaceType dielectric_dielectric
+/opticalSurface/PmtROUnitX/surfaceFinish polishedfrontpainted
+/opticalSurface/PmtROUnitX/surfaceModel unified
+#/opticalSurface/PmtROUnitX/surfaceSigmaAlpha 0.2
+#/opticalSurface/PmtROUnitX/surfacePolish 1.
+
+
+
+

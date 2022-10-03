@@ -1,0 +1,11 @@
+#This macro file is invoked from within the NuSDPmtROUnitBuilder.cc
+
+/NuSD/readout/PmtROUnitY/addLightGuideBinder true
+/NuSD/readout/PmtROUnitY/addLightGuide true
+/NuSD/readout/PmtROUnitY/addPhotoSensorBinder false
+
+/NuSD/readout/PmtROUnitY/addReflectorSurface true
+
+
+
+

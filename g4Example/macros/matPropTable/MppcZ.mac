@@ -1,0 +1,3 @@
+/matPropTable/MppcZ/addProperty REFLECTIVITY data/reflectors/reflectivity.txt 0.0
+/matPropTable/MppcZ/addProperty EFFICIENCY data/reflectors/efficiency.txt 1.0
+

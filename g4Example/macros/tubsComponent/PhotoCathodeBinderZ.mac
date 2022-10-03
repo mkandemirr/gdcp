@@ -1,0 +1,9 @@
+
+##########photoCathodeBinder##############
+#binder radius are adjusted wrt photoCathde radius.
+/NuSD/tubsComponent/PhotoCathodeBinderZ/halfLength 15 mm
+/NuSD/tubsComponent/PhotoCathodeBinderZ/matName Grease
+
+
+
+

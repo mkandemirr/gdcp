@@ -1,0 +1,12 @@
+
+
+#################EJ-335 SCINTILLATOR MatProp#########################3
+/matPropTable/EJ-335/addProperty SCINTILLATIONCOMPONENT1 data/materials/Ej335_emissionSpect.txt
+/matPropTable/EJ-335/addProperty RINDEX data/materials/Ej335_refSpect.txt 1.48
+/matPropTable/EJ-335/addProperty ABSLENGTH data/materials/Ej335_absSpect.txt 450 cm
+
+/matPropTable/EJ-335/addConstProperty SCINTILLATIONYIELD 13 1./MeV #8500
+/matPropTable/EJ-335/addConstProperty SCINTILLATIONYIELD1 1 
+/matPropTable/EJ-335/addConstProperty SCINTILLATIONTIMECONSTANT1 2.1 ns
+/matPropTable/EJ-335/addConstProperty SCINTILLATIONRISETIME1 0.9 ns
+/matPropTable/EJ-335/addConstProperty RESOLUTIONSCALE 0.3

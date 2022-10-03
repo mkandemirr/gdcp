@@ -1,0 +1,12 @@
+
+
+#################EJ-200 SCINTILLATOR MatProp#########################3
+/matPropTable/EJ-200/addProperty SCINTILLATIONCOMPONENT1 data/materials/Ej200_emissionSpect.txt #read two column
+/matPropTable/EJ-200/addProperty RINDEX data/materials/Ej200_refSpect.txt 1.58 # read one column
+/matPropTable/EJ-200/addProperty ABSLENGTH data/materials/Ej200_absSpect.txt 250 cm #read one column
+
+/matPropTable/EJ-200/addConstProperty SCINTILLATIONYIELD 13 1./MeV
+/matPropTable/EJ-200/addConstProperty SCINTILLATIONYIELD1 1 
+/matPropTable/EJ-200/addConstProperty SCINTILLATIONTIMECONSTANT1 2.1 ns
+/matPropTable/EJ-200/addConstProperty SCINTILLATIONRISETIME1 0.19 ns
+/matPropTable/EJ-200/addConstProperty RESOLUTIONSCALE 0.3

@@ -1,0 +1,8 @@
+
+
+#################Pmma Mat Prop#########################3
+
+/matPropTable/Pmma/addProperty RINDEX data/materials/Pmma_refSpect.txt 1.49
+/matPropTable/Pmma/addProperty ABSLENGTH data/materials/Pmma_absSpect.txt 300 cm
+
+

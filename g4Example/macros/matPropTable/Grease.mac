@@ -1,0 +1,8 @@
+
+
+#################Grease MatProp#########################3
+
+/matPropTable/Grease/addProperty RINDEX data/materials/Grease_refSpect.txt 1.43
+/matPropTable/Grease/addProperty ABSLENGTH data/materials/Grease_absSpect.txt 300 cm
+
+

@@ -1,0 +1,1489 @@
+Using the MT Run Manager (G4MULTITHREADED=ON)
+
+
+          ################################
+          !!! G4Backtrace is activated !!!
+          ################################
+
+
+**************************************************************
+ Geant4 version Name: geant4-11-00 [MT]   (10-December-2021)
+  << in Multi-threaded mode >> 
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+<<< Geant4 Physics List simulation engine: FTFP_BERT
+
+Component builder <<PandaUnit>> has been created.
+Smart component <<PandaUnit>> has been created.
+MaterialPropertiesHelperMessenger <<AluminizedMylar>> has been created at 0 state...
+Optical surface AluminizedMylar messenger is initializing at 0 state
+Component builder <<GammaScnt>> has been created.
+BoxComponentBuilderMessenger <<GammaScnt>> has been created at 0 state...
+Smart component <<GammaScnt>> has been created.
+Component builder <<OptBarrier>> has been created.
+BoxComponentBuilderMessenger <<OptBarrier>> has been created at 0 state...
+Smart component <<OptBarrier>> has been created.
+Component builder <<Reflector>> has been created.
+BoxComponentBuilderMessenger <<Reflector>> has been created at 0 state...
+Smart component <<Reflector>> has been created.
+Component builder <<GdLayer>> has been created.
+BoxComponentBuilderMessenger <<GdLayer>> has been created at 0 state...
+Smart component <<GdLayer>> has been created.
+Component builder <<detBuilder>> has been created.
+detBuilder messenger is initializing at 0 state
+Smart component <<detBuilder>> has been created.
+Component builder <<PmtROUnitZ>> has been created.
+ComponentBuilder messenger <<PmtROUnitZ>> has been created at 0 state...
+Smart component <<PmtROUnitZ>> has been created.
+Component builder <<LightGuideBinderZ>> has been created.
+BoxComponentBuilderMessenger <<LightGuideBinderZ>> has been created at 0 state...
+Smart component <<LightGuideBinderZ>> has been created.
+Component builder <<LightGuideZ>> has been created.
+TrdComponentBuilderMessenger <<LightGuideZ>> has been created at 0 state...
+Smart component <<LightGuideZ>> has been created.
+Component builder <<PhotoCathodeBinderZ>> has been created.
+TubsComponentBuilderMessenger <<PhotoCathodeBinderZ>> has been created at 0 state
+Smart component <<PhotoCathodeBinderZ>> has been created.
+Component builder <<PhotoCathodeZ>> has been created.
+TubsComponentBuilderMessenger <<PhotoCathodeZ>> has been created at 0 state
+Smart component <<PhotoCathodeZ>> has been created.
+MaterialPropertiesHelperMessenger <<PmtROUnitZ>> has been created at 0 state...
+Optical surface PmtROUnitZ messenger is initializing at 0 state
+Visualization Manager instantiating with verbosity "warnings (3)"...
+Visualization Manager initialising...
+Registering graphics systems...
+
+You have successfully registered the following graphics systems.
+Registered graphics systems are:
+  ASCIITree (ATree)
+  DAWNFILE (DAWNFILE)
+  G4HepRepFile (HepRepFile)
+  RayTracer (RayTracer)
+  VRML2FILE (VRML2FILE)
+  gMocrenFile (gMocrenFile)
+  OpenGLImmediateQt (OGLIQt, OGLI)
+  OpenGLStoredQt (OGLSQt, OGL, OGLS)
+  OpenGLImmediateX (OGLIX, OGLIQt_FALLBACK)
+  OpenGLStoredX (OGLSX, OGLSQt_FALLBACK)
+  RayTracerX (RayTracerX)
+
+Registering model factories...
+
+You have successfully registered the following model factories.
+Registered model factories:
+  generic
+  drawByAttribute
+  drawByCharge
+  drawByOriginVolume
+  drawByParticleID
+  drawByEncounteredVolume
+
+Registered models:
+  None
+
+Registered filter factories:
+  attributeFilter
+  chargeFilter
+  originVolumeFilter
+  particleFilter
+  encounteredVolumeFilter
+
+Registered filters:
+  None
+
+You have successfully registered the following user vis actions.
+Run Duration User Vis Actions: none
+End of Event User Vis Actions: none
+End of Run User Vis Actions: none
+
+Some /vis commands (optionally) take a string to specify colour.
+"/vis/list" to see available colours.
+/run/verbose 2
+/tracking/verbose -1
+# Sends G4cout stream to a per-thread file
+#/control/cout/setCoutFile fileName
+#hide worker prints. buffer the output from each thread at a time,
+#so that the output of each thread is grouped and printed at the #end of the job
+#/control/cout/useBuffer false
+#to limit the output from threads to one selected thread only:
+#/control/cout/ignoreThreadsExcept 0
+#to redirect the output from threads in a file:
+#/control/cout/setCoutFile coutFileName
+#/control/cout/setCerrFile cerrFileName
+#/process/optical/verbose 2
+/run/printProgress 1000
+# Change the default number of threads (in multi-threaded mode)
+#/run/numberOfThreads 4
+# Initialize kernel
+/run/initialize
+userDetector->Construct() start.
+Material builder <<Air>> has been created.
+MaterialPropertiesHelperMessenger <<Air>> has been created at 1 state...
+/control/execute macros/matPropTable/Air.mac
+#################Air Mat Prop#########################3
+/matPropTable/Air/addProperty RINDEX data/materials/Air_refSpect.txt 1.0
+/matPropTable/Air/addProperty ABSLENGTH data/materials/Air_absSpect.txt 300 cm
+Air G4MaterialPropertiesTable---------
+0: RINDEX
+2.067e-06   1
+3.4e-06   1
+9: GROUPVEL
+2.067e-06   299.792
+3.4e-06   299.792
+16: ABSLENGTH
+2.067e-06   3000
+3.4e-06   3000
+Material builder <<EJ-200>> has been created.
+MaterialPropertiesHelperMessenger <<EJ-200>> has been created at 1 state...
+/control/execute macros/matPropTable/EJ-200.mac
+#################EJ-200 SCINTILLATOR MatProp#########################3
+/matPropTable/EJ-200/addProperty SCINTILLATIONCOMPONENT1 data/materials/Ej200_emissionSpect.txt
+/matPropTable/EJ-200/addProperty RINDEX data/materials/Ej200_refSpect.txt 1.58
+/matPropTable/EJ-200/addProperty ABSLENGTH data/materials/Ej200_absSpect.txt 250 cm
+/matPropTable/EJ-200/addConstProperty SCINTILLATIONYIELD 13 1./MeV
+/matPropTable/EJ-200/addConstProperty SCINTILLATIONYIELD1 1
+/matPropTable/EJ-200/addConstProperty SCINTILLATIONTIMECONSTANT1 2.1 ns
+/matPropTable/EJ-200/addConstProperty SCINTILLATIONRISETIME1 0.19 ns
+/matPropTable/EJ-200/addConstProperty RESOLUTIONSCALE 0.3
+EJ-200 G4MaterialPropertiesTable---------
+0: RINDEX
+2.067e-06   1.58
+3.263e-06   1.58
+9: GROUPVEL
+2.067e-06   189.742
+3.263e-06   189.742
+16: ABSLENGTH
+2.067e-06   2500
+3.263e-06   2500
+23: SCINTILLATIONCOMPONENT1
+2.48e-06   0.056
+2.49e-06   0.059
+2.5e-06   0.068
+2.51e-06   0.077
+2.52e-06   0.087
+2.531e-06   0.098
+2.541e-06   0.109
+2.551e-06   0.123
+2.562e-06   0.137
+2.573e-06   0.153
+2.583e-06   0.171
+2.594e-06   0.191
+2.605e-06   0.212
+2.616e-06   0.238
+2.627e-06   0.271
+2.638e-06   0.306
+2.65e-06   0.337
+2.661e-06   0.364
+2.672e-06   0.389
+2.684e-06   0.41
+2.696e-06   0.429
+2.707e-06   0.448
+2.719e-06   0.468
+2.731e-06   0.492
+2.743e-06   0.519
+2.756e-06   0.549
+2.768e-06   0.582
+2.78e-06   0.617
+2.793e-06   0.658
+2.805e-06   0.706
+2.818e-06   0.755
+2.831e-06   0.804
+2.844e-06   0.85
+2.857e-06   0.89
+2.87e-06   0.926
+2.884e-06   0.956
+2.897e-06   0.982
+2.911e-06   0.999
+2.925e-06   0.991
+2.938e-06   0.949
+2.952e-06   0.861
+2.967e-06   0.728
+2.981e-06   0.596
+2.995e-06   0.454
+3.01e-06   0.348
+3.024e-06   0.251
+3.039e-06   0.173
+3.054e-06   0.101
+3.069e-06   0.044
+3.085e-06   0.016
+3.1e-06   0.006
+3.116e-06   0.002
+3.131e-06   0
+3.147e-06   0.001
+3.163e-06   0.001
+3.179e-06   0.001
+3.196e-06   0.001
+3.212e-06   0.001
+3.229e-06   0.001
+3.246e-06   0.001
+3.263e-06   0.001
+10: SCINTILLATIONYIELD 13
+11: RESOLUTIONSCALE 0.3
+30: SCINTILLATIONTIMECONSTANT1 2.1
+33: SCINTILLATIONRISETIME1 0.19
+36: SCINTILLATIONYIELD1 1
+Material builder <<AluminizedMylar>> has been created.
+MaterialPropertiesHelperMessenger <<AluminizedMylar>> has been created at 1 state...
+/control/execute macros/matPropTable/AluminizedMylar.mac
+################ALUMINIZED MYLAR MAT PROPERTIES#########
+/matPropTable/AluminizedMylar/addProperty REFLECTIVITY data/reflectors/reflectivity.txt 1.0
+/matPropTable/AluminizedMylar/addProperty EFFICIENCY data/reflectors/efficiency.txt 0.0
+AluminizedMylar G4MaterialPropertiesTable---------
+Material builder <<GdCoating>> has been created.
+AluminizedMylar G4MaterialPropertiesTable---------
+1: REFLECTIVITY
+2.067e-06   1
+3.4e-06   1
+4: EFFICIENCY
+2.067e-06   0
+3.4e-06   0
+Checking overlaps for volume NuScntPV:0 (G4Box) ... OK! 
+Checking overlaps for volume OptBarrierPV:1 (G4Box) ... OK! 
+Checking overlaps for volume ReflectorPV:2 (G4Box) ... OK! 
+Checking overlaps for volume GdPV:3 (G4Box) ... OK! 
+Material builder <<Cement>> has been created.
+Material builder <<Pmma>> has been created.
+MaterialPropertiesHelperMessenger <<Pmma>> has been created at 1 state...
+/control/execute macros/matPropTable/Pmma.mac
+#################Pmma Mat Prop#########################3
+/matPropTable/Pmma/addProperty RINDEX data/materials/Pmma_refSpect.txt 1.49
+/matPropTable/Pmma/addProperty ABSLENGTH data/materials/Pmma_absSpect.txt 300 cm
+Pmma G4MaterialPropertiesTable---------
+0: RINDEX
+2.067e-06   1.49
+2.102e-06   1.49
+2.138e-06   1.49
+2.175e-06   1.49
+2.214e-06   1.49
+2.255e-06   1.49
+2.296e-06   1.49
+2.34e-06   1.49
+2.385e-06   1.49
+2.431e-06   1.49
+2.48e-06   1.49
+2.531e-06   1.49
+2.583e-06   1.49
+2.638e-06   1.49
+2.696e-06   1.49
+2.756e-06   1.49
+2.818e-06   1.49
+2.884e-06   1.49
+2.952e-06   1.49
+3.024e-06   1.49
+3.1e-06   1.49
+3.263e-06   1.49
+9: GROUPVEL
+2.067e-06   201.203
+2.0845e-06   201.203
+2.12e-06   201.203
+2.1565e-06   201.203
+2.1945e-06   201.203
+2.2345e-06   201.203
+2.2755e-06   201.203
+2.318e-06   201.203
+2.3625e-06   201.203
+2.408e-06   201.203
+2.4555e-06   201.203
+2.5055e-06   201.203
+2.557e-06   201.203
+2.6105e-06   201.203
+2.667e-06   201.203
+2.726e-06   201.203
+2.787e-06   201.203
+2.851e-06   201.203
+2.918e-06   201.203
+2.988e-06   201.203
+3.062e-06   201.203
+3.263e-06   201.203
+16: ABSLENGTH
+2.067e-06   3000
+2.102e-06   3000
+2.138e-06   3000
+2.175e-06   3000
+2.214e-06   3000
+2.255e-06   3000
+2.296e-06   3000
+2.34e-06   3000
+2.385e-06   3000
+2.431e-06   3000
+2.48e-06   3000
+2.531e-06   3000
+2.583e-06   3000
+2.638e-06   3000
+2.696e-06   3000
+2.756e-06   3000
+2.818e-06   3000
+2.884e-06   3000
+2.952e-06   3000
+3.024e-06   3000
+3.1e-06   3000
+3.263e-06   3000
+Material builder <<Grease>> has been created.
+PmtROUnitZ G4MaterialPropertiesTable---------
+1: REFLECTIVITY
+2.067e-06   1
+3.4e-06   1
+4: EFFICIENCY
+2.067e-06   0
+3.4e-06   0
+Checking overlaps for volume LgBinderPV:0 (G4Box) ... OK! 
+Checking overlaps for volume LightGuidePV:1 (G4Trd) ... OK! 
+Checking overlaps for volume PSBinderPV:2 (G4Tubs) ... OK! 
+Checking overlaps for volume PhotonSDPV:3 (G4Tubs) ... OK! 
+Checking overlaps for volume UnitPV:0 (G4Box) ... OK! 
+Checking overlaps for volume UnitPV:1 (G4Box) ... OK! 
+Checking overlaps for volume UnitPV:2 (G4Box) ... OK! 
+Checking overlaps for volume UnitPV:3 (G4Box) ... OK! 
+Checking overlaps for volume UnitPV:4 (G4Box) ... OK! 
+Checking overlaps for volume UnitPV:5 (G4Box) ... OK! 
+Checking overlaps for volume UnitPV:6 (G4Box) ... OK! 
+Checking overlaps for volume UnitPV:7 (G4Box) ... OK! 
+Checking overlaps for volume UnitPV:8 (G4Box) ... OK! 
+Checking overlaps for volume UnitPV:9 (G4Box) ... OK! 
+Checking overlaps for volume UnitPV:10 (G4Box) ... OK! 
+Checking overlaps for volume UnitPV:11 (G4Box) ... OK! 
+Checking overlaps for volume UnitPV:12 (G4Box) ... OK! 
+Checking overlaps for volume UnitPV:13 (G4Box) ... OK! 
+Checking overlaps for volume UnitPV:14 (G4Box) ... OK! 
+Checking overlaps for volume ROUnitPV:0 (G4Box) ... OK! 
+Checking overlaps for volume ROUnitPV:1 (G4Box) ... OK! 
+Checking overlaps for volume ROUnitPV:2 (G4Box) ... OK! 
+Checking overlaps for volume ROUnitPV:3 (G4Box) ... OK! 
+Checking overlaps for volume ROUnitPV:4 (G4Box) ... OK! 
+Checking overlaps for volume ROUnitPV:5 (G4Box) ... OK! 
+Checking overlaps for volume ROUnitPV:6 (G4Box) ... OK! 
+Checking overlaps for volume ROUnitPV:7 (G4Box) ... OK! 
+Checking overlaps for volume ROUnitPV:8 (G4Box) ... OK! 
+Checking overlaps for volume ROUnitPV:9 (G4Box) ... OK! 
+Checking overlaps for volume ROUnitPV:10 (G4Box) ... OK! 
+Checking overlaps for volume ROUnitPV:11 (G4Box) ... OK! 
+Checking overlaps for volume ROUnitPV:12 (G4Box) ... OK! 
+Checking overlaps for volume ROUnitPV:13 (G4Box) ... OK! 
+Checking overlaps for volume ROUnitPV:14 (G4Box) ... OK! 
+Checking overlaps for volume DetectorPV:0 (G4Box) ... OK! 
+WorldLogic is registered to the default region.
+Sensitive detector <<GammaScnt>> has been created.
+physicsList->Construct() start.
+
+ hInelastic FTFP_BERT : threshold between BERT and FTFP is over the interval 
+ for pions :   3 to 6 GeV
+ for kaons :   3 to 6 GeV
+ for proton :  3 to 6 GeV
+ for neutron : 3 to 6 GeV
+
+### Adding tracking cuts for neutron  TimeCut(ns)= 10000  KinEnergyCut(MeV)= 0
+### Birks coefficients used in run time
+physicsList->CheckParticleList() start.
+physicsList->setCut() start.
+/run/physicsModified
+=======================================================================
+======                 Electromagnetic Physics Parameters      ========
+=======================================================================
+LPM effect enabled                                 1
+Enable creation and use of sampling tables         0
+Apply cuts on all EM processes                     0
+Use general process                                0
+Enable linear polarisation for gamma               0
+Enable sampling of quantum entanglement            0
+X-section factor for integral approach             0.8
+Min kinetic energy for tables                      100 eV 
+Max kinetic energy for tables                      100 TeV
+Number of bins per decade of a table               7
+Verbose level                                      1
+Verbose level for worker thread                    0
+Bremsstrahlung energy threshold above which 
+  primary e+- is added to the list of secondary    100 TeV
+Bremsstrahlung energy threshold above which primary
+  muon/hadron is added to the list of secondary    100 TeV
+Lowest triplet kinetic energy                      1 MeV
+Enable sampling of gamma linear polarisation       0
+5D gamma conversion model type                     0
+5D gamma conversion model on isolated ion          0
+Livermore data directory                           livermore
+=======================================================================
+======                 Ionisation Parameters                   ========
+=======================================================================
+Step function for e+-                              (0.2, 1 mm)
+Step function for muons/hadrons                    (0.2, 0.1 mm)
+Step function for light ions                       (0.2, 0.1 mm)
+Step function for general ions                     (0.2, 0.1 mm)
+Lowest e+e- kinetic energy                         1 keV
+Lowest muon/hadron kinetic energy                  1 keV
+Fluctuations of dE/dx are enabled                  1
+Use ICRU90 data                                    0
+Use built-in Birks satuaration                     1
+Build CSDA range enabled                           0
+Use cut as a final range enabled                   0
+Enable angular generator interface                 0
+Max kinetic energy for CSDA tables                 1 GeV
+Max kinetic energy for NIEL computation            0 eV 
+Linear loss limit                                  0.01
+Read data from file for e+e- pair production by mu 0
+=======================================================================
+======                 Multiple Scattering Parameters          ========
+=======================================================================
+Type of msc step limit algorithm for e+-           1
+Type of msc step limit algorithm for muons/hadrons 0
+Msc lateral displacement for e+- enabled           1
+Msc lateral displacement for muons and hadrons     0
+Urban msc model lateral displacement alg96         1
+Range factor for msc step limit for e+-            0.04
+Range factor for msc step limit for muons/hadrons  0.2
+Geometry factor for msc step limitation of e+-     2.5
+Safety factor for msc step limit for e+-           0.6
+Skin parameter for msc step limitation of e+-      1
+Lambda limit for msc step limit for e+-            1 mm
+Use Mott correction for e- scattering              0
+Factor used for dynamic computation of angular 
+  limit between single and multiple scattering     1
+Fixed angular limit between single 
+  and multiple scattering                          3.1416 rad
+Upper energy limit for e+- multiple scattering     100 MeV
+Type of electron single scattering model           0
+Type of nuclear form-factor                        1
+Screening factor                                   1
+=======================================================================
+
+phot:  for gamma SubType=12 BuildTable=0
+      LambdaPrime table from 200 keV to 100 TeV in 61 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+ LivermorePhElectric : Emin=    0 eV  Emax=  100 TeV  SauterGavrila Fluo
+
+compt:  for gamma SubType=13 BuildTable=1
+      Lambda table from 100 eV  to 1 MeV, 7 bins/decade, spline: 1
+      LambdaPrime table from 1 MeV to 100 TeV in 56 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       Klein-Nishina : Emin=    0 eV  Emax=  100 TeV
+
+conv:  for gamma SubType=14 BuildTable=1
+      Lambda table from 1.022 MeV to 100 TeV, 18 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+     BetheHeitlerLPM : Emin=    0 eV  Emax=  100 TeV  ModifiedTsai
+
+Rayl:  for gamma SubType=11 BuildTable=1
+      Lambda table from 100 eV  to 100 keV, 7 bins/decade, spline: 0
+      LambdaPrime table from 100 keV to 100 TeV in 63 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   LivermoreRayleigh : Emin=    0 eV  Emax=  100 TeV  CullenGenerator
+
+msc:  for e-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 MeV Nbins=42 100 eV  - 100 MeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+        WentzelVIUni : Emin=  100 MeV Emax=  100 TeV Nbins=42 100 MeV - 100 TeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+
+eIoni:  for e-  XStype:1  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 1 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha : Emin=    0 eV  Emax=  100 TeV
+
+eBrem:  for e-  XStype:4  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      LPM flag: 1 for E > 1 GeV,  VertexHighEnergyTh(GeV)= 100000
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB : Emin=    0 eV  Emax=    1 GeV  ModifiedTsai
+            eBremLPM : Emin=    1 GeV Emax=  100 TeV  ModifiedTsai
+
+CoulombScat:  for e- XStype:3 SubType=1 BuildTable=1
+      Lambda table from 100 MeV to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=  100 MeV Emax=  100 TeV
+
+msc:  for e+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 MeV Nbins=42 100 eV  - 100 MeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+        WentzelVIUni : Emin=  100 MeV Emax=  100 TeV Nbins=42 100 MeV - 100 TeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+
+eIoni:  for e+  XStype:1  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 1 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha : Emin=    0 eV  Emax=  100 TeV
+
+eBrem:  for e+  XStype:4  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      LPM flag: 1 for E > 1 GeV,  VertexHighEnergyTh(GeV)= 100000
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB : Emin=    0 eV  Emax=    1 GeV  ModifiedTsai
+            eBremLPM : Emin=    1 GeV Emax=  100 TeV  ModifiedTsai
+
+annihil:  for e+ XStype:2 SubType=5 BuildTable=0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            eplus2gg : Emin=    0 eV  Emax=  100 TeV
+
+CoulombScat:  for e+ XStype:3 SubType=1 BuildTable=1
+      Lambda table from 100 MeV to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=  100 MeV Emax=  100 TeV
+
+msc:  for proton  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for proton  XStype:1  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=    2 MeV
+          BetheBloch : Emin=    2 MeV Emax=  100 TeV
+
+hBrems:  for proton  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for proton  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 0
+      Sampling table 17x1001; from 7.50618 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for proton XStype:3 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for GenericIon  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+ionIoni:  for GenericIon  XStype:1  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 1, fluct: 1, linLossLim= 0.02
+      Stopping Power data for 17 ion/material pairs
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            BraggIon : Emin=    0 eV  Emax=    2 MeV
+          BetheBloch : Emin=    2 MeV Emax=  100 TeV
+
+msc:  for alpha  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+ionIoni:  for alpha  XStype:1  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 1, fluct: 1, linLossLim= 0.02
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            BraggIon : Emin=    0 eV  Emax=7.9452 MeV
+          BetheBloch : Emin=7.9452 MeV Emax=  100 TeV
+
+msc:  for anti_proton  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for anti_proton  XStype:1  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=    2 MeV
+          BetheBloch : Emin=    2 MeV Emax=  100 TeV
+
+hBrems:  for anti_proton  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for anti_proton  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 0
+      Sampling table 17x1001; from 7.50618 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for anti_proton XStype:3 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for kaon+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for kaon+  XStype:1  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=1.05231 MeV
+          BetheBloch : Emin=1.05231 MeV Emax=  100 TeV
+
+hBrems:  for kaon+  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for kaon+  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 0
+      Sampling table 18x1001; from 3.94942 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for kaon+ XStype:3 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for kaon-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for kaon-  XStype:1  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=1.05231 MeV
+          BetheBloch : Emin=1.05231 MeV Emax=  100 TeV
+
+hBrems:  for kaon-  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for kaon-  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 0
+      Sampling table 18x1001; from 3.94942 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for kaon- XStype:3 SubType=1 BuildTable=1
+      Used Lambda table of kaon+
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for mu+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+muIoni:  for mu+  XStype:1  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=  200 keV
+          BetheBloch : Emin=  200 keV Emax=    1 GeV
+        MuBetheBloch : Emin=    1 GeV Emax=  100 TeV
+
+muBrems:  for mu+  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+muPairProd:  for mu+  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 0
+      Sampling table 21x1001; from 1 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for mu+ XStype:3 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for mu-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+muIoni:  for mu-  XStype:1  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=  200 keV
+          BetheBloch : Emin=  200 keV Emax=    1 GeV
+        MuBetheBloch : Emin=    1 GeV Emax=  100 TeV
+
+muBrems:  for mu-  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+muPairProd:  for mu-  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 0
+      Sampling table 21x1001; from 1 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for mu- XStype:3 SubType=1 BuildTable=1
+      Used Lambda table of mu+
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for pi+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for pi+  XStype:1  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=297.505 keV
+          BetheBloch : Emin=297.505 keV Emax=  100 TeV
+
+hBrems:  for pi+  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for pi+  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 0
+      Sampling table 20x1001; from 1.11656 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for pi+ XStype:3 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for pi-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for pi-  XStype:1  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=297.505 keV
+          BetheBloch : Emin=297.505 keV Emax=  100 TeV
+
+hBrems:  for pi-  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for pi-  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 0
+      Sampling table 20x1001; from 1.11656 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for pi- XStype:3 SubType=1 BuildTable=1
+      Used Lambda table of pi+
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+====================================================================
+                  HADRONIC PROCESSES SUMMARY (verbose level 1)
+
+---------------------------------------------------
+                           Hadronic Processes for neutron
+
+  Process: hadElastic
+        Model:             hElasticCHIPS: 0 eV  ---> 100 TeV
+     Cr_sctns:        G4NeutronElasticXS: 0 eV  ---> 100 TeV
+
+  Process: neutronInelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:      G4NeutronInelasticXS: 0 eV  ---> 100 TeV
+
+  Process: nCapture
+        Model:               nRadCapture: 0 eV  ---> 100 TeV
+     Cr_sctns:        G4NeutronCaptureXS: 0 eV  ---> 100 TeV
+
+  Process: nKiller
+
+---------------------------------------------------
+                           Hadronic Processes for B-
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+  Process: B-Inelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for D-
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+  Process: D-Inelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for GenericIon
+
+  Process: ionInelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+
+---------------------------------------------------
+                           Hadronic Processes for He3
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+
+  Process: He3Inelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+
+---------------------------------------------------
+                           Hadronic Processes for alpha
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+
+  Process: alphaInelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+
+---------------------------------------------------
+                           Hadronic Processes for anti_He3
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100.1 MeV/n
+        Model:              AntiAElastic: 100 MeV/n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+  Process: anti_He3Inelastic
+        Model:                      FTFP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+  Process: hFritiofCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for anti_alpha
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100.1 MeV/n
+        Model:              AntiAElastic: 100 MeV/n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+  Process: anti_alphaInelastic
+        Model:                      FTFP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+  Process: hFritiofCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for anti_deuteron
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100.1 MeV/n
+        Model:              AntiAElastic: 100 MeV/n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+  Process: anti_deuteronInelastic
+        Model:                      FTFP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+  Process: hFritiofCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for anti_lambda
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+  Process: anti_lambdaInelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+  Process: hFritiofCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for anti_neutron
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100.1 MeV
+        Model:              AntiAElastic: 100 MeV ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+  Process: anti_neutronInelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+  Process: hFritiofCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for anti_proton
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100.1 MeV
+        Model:              AntiAElastic: 100 MeV ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+  Process: anti_protonInelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+  Process: hFritiofCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for anti_triton
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100.1 MeV/n
+        Model:              AntiAElastic: 100 MeV/n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+  Process: anti_tritonInelastic
+        Model:                      FTFP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+  Process: hFritiofCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for deuteron
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+
+  Process: dInelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+
+---------------------------------------------------
+                           Hadronic Processes for e+
+
+  Process: positronNuclear
+        Model:   G4ElectroVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:          ElectroNuclearXS: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for e-
+
+  Process: electronNuclear
+        Model:   G4ElectroVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:          ElectroNuclearXS: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for gamma
+
+  Process: photonNuclear
+        Model:               GammaNPreco: 0 eV  ---> 200 MeV
+        Model:            BertiniCascade: 199 MeV ---> 6 GeV
+        Model:           TheoFSGenerator: 3 GeV ---> 100 TeV
+     Cr_sctns:            GammaNuclearXS: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for kaon+
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+  Process: kaon+Inelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for kaon-
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+  Process: kaon-Inelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+  Process: hBertiniCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for lambda
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+  Process: lambdaInelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for mu+
+
+  Process: muonNuclear
+        Model:      G4MuonVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:     KokoulinMuonNuclearXS: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for mu-
+
+  Process: muonNuclear
+        Model:      G4MuonVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:     KokoulinMuonNuclearXS: 0 eV  ---> 100 TeV
+
+  Process: muMinusCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for pi+
+
+  Process: hadElastic
+        Model:           hElasticGlauber: 0 eV  ---> 100 TeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+
+  Process: pi+Inelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for pi-
+
+  Process: hadElastic
+        Model:           hElasticGlauber: 0 eV  ---> 100 TeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+
+  Process: pi-Inelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+
+  Process: hBertiniCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for proton
+
+  Process: hadElastic
+        Model:             hElasticCHIPS: 0 eV  ---> 100 TeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+
+  Process: protonInelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for sigma-
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+  Process: sigma-Inelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+  Process: hBertiniCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for triton
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+
+  Process: tInelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+
+================================================================
+=======================================================================
+======       Pre-compound/De-excitation Physics Parameters     ========
+=======================================================================
+Type of pre-compound inverse x-section              3
+Pre-compound model active                           1
+Pre-compound excitation low energy (MeV)            0.1
+Pre-compound excitation high energy (MeV)           30
+Type of de-excitation inverse x-section             3
+Type of de-excitation factory                       Evaporation+GEM
+Number of de-excitation channels                    68
+Min excitation energy (keV)                         0.01
+Min energy per nucleon for multifragmentation (MeV) 2e+05
+Limit excitation energy for Fermi BreakUp (MeV)     20
+Level density (1/MeV)                               0.075
+Use simple level density model                      1
+Use discrete excitation energy of the residual      0
+Time limit for long lived isomeres (ns)             1
+Isomer production flag                              1
+Internal e- conversion flag                         1
+Store e- internal conversion data                   0
+Correlated gamma emission flag                      0
+Max 2J for sampling of angular correlations         10
+=======================================================================
+Start closing geometry.
+G4GeometryManager::ReportVoxelStats -- Voxel Statistics
+
+    Total memory consumed for geometry optimisation:   12 kByte
+    Total CPU time elapsed for geometry optimisation: 0 seconds
+
+    Voxelisation: top CPU users:
+    Percent   Total CPU    System CPU       Memory  Volume
+    -------   ----------   ----------     --------  ----------
+       0.00         0.00         0.00            1k PmtROUnitZLogic
+       0.00         0.00         0.00           12k DetectorLogic
+
+    Voxelisation: top memory users:
+    Percent     Memory      Heads    Nodes   Pointers    Total CPU    Volume
+    -------   --------     ------   ------   --------   ----------    ----------
+      95.40         11k        40      135        364         0.00    DetectorLogic
+       4.60          0k         2        7         14         0.00    PmtROUnitZLogic
+
+=======================================================================
+--> G4MTRunManager::CreateAndStartWorkers() --> Initializing workers...
+=======================================================================
+
+G4WT1 > /run/verbose 2
+G4WT0 > /run/verbose 2
+G4WT0 > /tracking/verbose -1
+G4WT1 > /tracking/verbose -1
+G4WT0 > /run/printProgress 1000
+G4WT1 > /run/printProgress 1000
+G4WT0 > /run/initialize 
+G4WT1 > /run/initialize 
+G4WT0 > /matPropTable/Air/addProperty RINDEX data/materials/Air_refSpect.txt 1.0
+G4WT1 > /matPropTable/Air/addProperty RINDEX data/materials/Air_refSpect.txt 1.0
+G4WT1 > /matPropTable/Air/addProperty ABSLENGTH data/materials/Air_absSpect.txt 300 cm
+G4WT0 > /matPropTable/Air/addProperty ABSLENGTH data/materials/Air_absSpect.txt 300 cm
+G4WT0 > /matPropTable/EJ-200/addProperty SCINTILLATIONCOMPONENT1 data/materials/Ej200_emissionSpect.txt
+G4WT0 > /matPropTable/EJ-200/addProperty RINDEX data/materials/Ej200_refSpect.txt 1.58
+G4WT1 > /matPropTable/EJ-200/addProperty SCINTILLATIONCOMPONENT1 data/materials/Ej200_emissionSpect.txt
+G4WT1 > /matPropTable/EJ-200/addProperty RINDEX data/materials/Ej200_refSpect.txt 1.58
+G4WT0 > /matPropTable/EJ-200/addProperty ABSLENGTH data/materials/Ej200_absSpect.txt 250 cm
+G4WT1 > /matPropTable/EJ-200/addProperty ABSLENGTH data/materials/Ej200_absSpect.txt 250 cm
+G4WT0 > /matPropTable/EJ-200/addConstProperty SCINTILLATIONYIELD 13 1./MeV
+G4WT1 > /matPropTable/EJ-200/addConstProperty SCINTILLATIONYIELD 13 1./MeV
+G4WT0 > /matPropTable/EJ-200/addConstProperty SCINTILLATIONYIELD1 1
+G4WT1 > /matPropTable/EJ-200/addConstProperty SCINTILLATIONYIELD1 1
+G4WT0 > /matPropTable/EJ-200/addConstProperty SCINTILLATIONTIMECONSTANT1 2.1 ns
+G4WT1 > /matPropTable/EJ-200/addConstProperty SCINTILLATIONTIMECONSTANT1 2.1 ns
+G4WT0 > /matPropTable/EJ-200/addConstProperty SCINTILLATIONRISETIME1 0.19 ns
+G4WT1 > /matPropTable/EJ-200/addConstProperty SCINTILLATIONRISETIME1 0.19 ns
+G4WT0 > /matPropTable/EJ-200/addConstProperty RESOLUTIONSCALE 0.3
+G4WT1 > /matPropTable/EJ-200/addConstProperty RESOLUTIONSCALE 0.3
+G4WT0 > /matPropTable/AluminizedMylar/addProperty REFLECTIVITY data/reflectors/reflectivity.txt 1.0
+G4WT1 > /matPropTable/AluminizedMylar/addProperty REFLECTIVITY data/reflectors/reflectivity.txt 1.0
+G4WT0 > /matPropTable/AluminizedMylar/addProperty EFFICIENCY data/reflectors/efficiency.txt 0.0
+G4WT1 > /matPropTable/AluminizedMylar/addProperty EFFICIENCY data/reflectors/efficiency.txt 0.0
+G4WT0 > /matPropTable/Pmma/addProperty RINDEX data/materials/Pmma_refSpect.txt 1.49
+G4WT1 > /matPropTable/Pmma/addProperty RINDEX data/materials/Pmma_refSpect.txt 1.49
+G4WT0 > /matPropTable/Pmma/addProperty ABSLENGTH data/materials/Pmma_absSpect.txt 300 cm
+G4WT1 > /matPropTable/Pmma/addProperty ABSLENGTH data/materials/Pmma_absSpect.txt 300 cm
+G4WT0 > /run/physicsModified 
+G4WT1 > /run/physicsModified 
+/control/execute macros/run.mac
+##This macro file is invoked from within the Main.cc in the batch mode.
+/run/beamOn 2
+
+Region <DefaultRegionForTheWorld> --  -- appears in <WorldPV> world volume
+ This region is in the mass world.
+ Root logical volume(s) : WorldLogic 
+ Pointers : G4VUserRegionInformation[0], G4UserLimits[0], G4FastSimulationManager[0], G4UserSteppingAction[0]
+ Materials : Air GdCoating AluminizedMylar EJ-200 Cement Pmma Grease G4_Al 
+ Production cuts :   gamma 700 um      e- 700 um      e+ 700 um  proton 700 um 
+
+Region <DefaultRegionForParallelWorld> --  -- is not associated to any world.
+ Root logical volume(s) : 
+ Pointers : G4VUserRegionInformation[0], G4UserLimits[0], G4FastSimulationManager[0], G4UserSteppingAction[0]
+ Materials : 
+ Production cuts :   gamma 700 um      e- 700 um      e+ 700 um  proton 700 um 
+
+========= Table of registered couples ============================
+
+Index : 0     used in the geometry : Yes
+ Material : Air
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  1 keV    e-  1 keV    e+  1 keV proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 1     used in the geometry : Yes
+ Material : GdCoating
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  14.8371 keV    e-  209.044 keV    e+  203.068 keV proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 2     used in the geometry : Yes
+ Material : AluminizedMylar
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  2.65788 keV    e-  326.253 keV    e+  317.454 keV proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 3     used in the geometry : Yes
+ Material : EJ-200
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  2.09145 keV    e-  280.145 keV    e+  273.364 keV proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 4     used in the geometry : Yes
+ Material : Cement
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  2.09762 keV    e-  281.88 keV    e+  275.053 keV proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 5     used in the geometry : Yes
+ Material : Pmma
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  2.40354 keV    e-  304.718 keV    e+  296.913 keV proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 6     used in the geometry : Yes
+ Material : Grease
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  2.0138 keV    e-  313.085 keV    e+  305.327 keV proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 7     used in the geometry : Yes
+ Material : G4_Al
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  5.8472 keV    e-  461.197 keV    e+  445.1 keV proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+==================================================================
+
+G4VisManager: Using G4TrajectoryDrawByCharge as fallback trajectory model.
+See commands in /vis/modeling/trajectories/ for other options.
+### Run 0 starts.
+G4WT1 > ### Run 0 starts on worker thread 1.
+G4WT1 > --> Event 0 starts with initial seeds (3750346,88901387).
+G4WT0 > ### Run 0 starts on worker thread 0.
+G4WT0 > -------------------GammaScntSD Output---------------------------------------
+G4WT0 > CopyNo        ParticlePDG        TrackID           Energy(MeV)        Time(us)        
+G4WT0 > 7             22                 1                 0                  0               
+G4WT0 > 7             22                 1                 0                  0.00155646      
+G4WT0 > 7             11                 2                 4.53858e-16        0.00155646      
+G4WT0 > 7             11                 2                 4.53858e-16        0.00155646      
+G4WT0 > 7             11                 2                 6.80787e-16        0.00155646      
+G4WT0 > 7             11                 2                 0.304853           0.00155646      
+G4WT0 > 7             11                 2                 0.126468           0.00156104      
+G4WT0 > 7             11                 2                 0.0109867          0.0015627       
+G4WT0 > 7             11                 2                 0.000713551        0.0015629       
+G4WT0 > 7             11                 2                 1.13465e-16        0.00156293      
+G4WT0 > 7             11                 2                 0.000579881        0.00156293      
+G4WT0 > 7             11                 2                 0.00132431         0.00156295      
+G4WT0 > 7             11                 2                 0.14849            0.00156296      
+G4WT0 > 7             11                 2                 0                  0.0015638       
+G4WT0 > Thread-local run terminated.
+G4WT0 > Run Summary
+G4WT0 >   Number of events processed : 1
+G4WT0 >   User=0.010000s Real=0.003626s Sys=0.000000s [Cpu=275.8%]
+G4WT1 > -------------------GammaScntSD Output---------------------------------------
+G4WT1 > CopyNo        ParticlePDG        TrackID           Energy(MeV)        Time(us)        
+G4WT1 > 7             22                 1                 0                  0               
+G4WT1 > 7             22                 1                 0                  1.30775e-05     
+G4WT1 > 10            22                 1                 0                  0.000195474     
+G4WT1 > 10            22                 1                 0                  0.000319075     
+G4WT1 > 10            22                 1                 0                  0.000343273     
+G4WT1 > 9             22                 1                 0                  0.000535791     
+G4WT1 > 12            22                 1                 0                  0.000779121     
+G4WT1 > 10            11                 4                 0.0028791          0.000343273     
+G4WT1 > 10            11                 4                 0                  0.000343277     
+G4WT1 > 10            11                 3                 0.136925           0.000319075     
+G4WT1 > 10            11                 3                 0.140117           0.000320617     
+G4WT1 > 10            11                 3                 0                  0.000321386     
+G4WT1 > 7             11                 2                 0.547745           1.30775e-05     
+G4WT1 > 7             11                 2                 0.79923            2.55515e-05     
+G4WT1 > 7             11                 2                 9.98488e-15        3.80034e-05     
+G4WT1 > 7             11                 2                 0.552246           3.80034e-05     
+G4WT1 > 7             11                 2                 5.4463e-15         5.04068e-05     
+G4WT1 > 7             11                 2                 0.718903           5.04068e-05     
+G4WT1 > 7             11                 2                 1.5885e-14         6.27566e-05     
+G4WT1 > 7             11                 2                 0.631695           6.27566e-05     
+G4WT1 > 7             11                 2                 2.72315e-15        7.49848e-05     
+G4WT1 > 7             11                 2                 4.53858e-16        7.49848e-05     
+G4WT1 > 7             11                 2                 0.551451           7.49848e-05     
+G4WT1 > 7             11                 2                 2.95008e-15        8.62528e-05     
+G4WT1 > 7             11                 2                 0.574143           8.62528e-05     
+G4WT1 > 7             11                 2                 9.07716e-16        9.52595e-05     
+G4WT1 > 7             11                 2                 0.514163           9.52595e-05     
+G4WT1 > 7             11                 2                 1.13465e-16        0.000101725     
+G4WT1 > 7             11                 2                 0.404227           0.000101725     
+G4WT1 > 7             11                 2                 0.0148             0.000104752     
+G4WT1 > 7             11                 2                 0                  0.00010479      
+G4WT1 > Thread-local run terminated.
+G4WT1 > Run Summary
+G4WT1 >   Number of events processed : 1
+G4WT1 >   User=0.050000s Real=0.039305s Sys=0.000000s [Cpu=127.2%]
+ Run terminated.
+Run Summary
+  Number of events processed : 2
+  User=0.050000s Real=0.039914s Sys=0.000000s [Cpu=125.3%]
+0 events have been kept for refreshing and/or reviewing.
+  "/vis/reviewKeptEvents" to review them one by one.
+  "/vis/enable", then "/vis/viewer/flush" or "/vis/viewer/rebuild" to see them accumulated.
+Graphics systems deleted.
+Visualization Manager deleting...
+G4WT0 > Destroying WorkerRunManager (0x7fb29004b1e0)
+G4WT0 > G4 kernel has come to Quit state.
+G4WT1 > Destroying WorkerRunManager (0x7fb28804b1e0)
+G4WT1 > G4 kernel has come to Quit state.
+G4WT0 > UserDetectorConstruction deleted.
+G4WT0 > UserPhysicsList deleted.
+G4WT0 > UserActionInitialization deleted.
+G4WT0 > UserWorkerInitialization deleted.
+G4WT1 > UserDetectorConstruction deleted.
+G4WT1 > UserPhysicsList deleted.
+G4WT1 > UserActionInitialization deleted.
+G4WT1 > UserWorkerInitialization deleted.
+G4WT1 > UserWorkerThreadInitialization deleted.
+G4WT0 > UserWorkerThreadInitialization deleted.
+G4WT1 > UserRunAction deleted.
+G4WT0 > UserRunAction deleted.
+G4WT1 > UserPrimaryGenerator deleted.
+G4WT0 > UserPrimaryGenerator deleted.
+G4WT1 > RunManager is deleting RunManagerKernel.
+G4WT0 > RunManager is deleting RunManagerKernel.
+G4WT0 > G4SDManager deleted.
+G4WT1 > G4SDManager deleted.
+G4WT0 > EventManager deleted.
+G4WT1 > EventManager deleted.
+G4WT0 > Units table cleared.
+G4WT1 > Units table cleared.
+G4WT1 > TransportationManager deleted.
+G4WT0 > TransportationManager deleted.
+G4WT1 > Total navigation history collections cleaned: 7
+G4WT0 > Total navigation history collections cleaned: 6
+G4WT1 > ================== Deleting memory pools ===================
+G4WT0 > ================== Deleting memory pools ===================
+G4WT1 > Pool ID '20G4NavigationLevelRep', size : 0.00769 MB
+G4WT0 > Pool ID '20G4NavigationLevelRep', size : 0.00577 MB
+G4WT0 > Pool ID '24G4ReferenceCountedHandleIvE', size : 0.000961 MB
+G4WT1 > Pool ID '24G4ReferenceCountedHandleIvE', size : 0.000961 MB
+G4WT0 > Pool ID '7G4Event', size : 0.000961 MB
+G4WT1 > Pool ID '7G4Event', size : 0.000961 MB
+G4WT0 > Pool ID '15G4PrimaryVertex', size : 0.000961 MB
+G4WT1 > Pool ID '15G4PrimaryVertex', size : 0.000961 MB
+G4WT0 > Pool ID '17G4PrimaryParticle', size : 0.000961 MB
+G4WT1 > Pool ID '17G4PrimaryParticle', size : 0.000961 MB
+G4WT0 > Pool ID '15G4HCofThisEvent', size : 0.000961 MB
+G4WT1 > Pool ID '15G4HCofThisEvent', size : 0.000961 MB
+G4WT0 > Pool ID '16G4HitsCollection', size : 0.000961 MB
+G4WT1 > Pool ID '16G4HitsCollection', size : 0.000961 MB
+G4WT0 > Pool ID '17G4DynamicParticle', size : 0.00577 MB
+G4WT1 > Pool ID '17G4DynamicParticle', size : 0.0202 MB
+G4WT0 > Pool ID '7G4Track', size : 0.0115 MB
+G4WT1 > Pool ID '7G4Track', size : 0.0394 MB
+G4WT0 > Pool ID '18G4TouchableHistory', size : 0.000961 MB
+G4WT1 > Pool ID '18G4TouchableHistory', size : 0.000961 MB
+G4WT0 > Pool ID '15G4CountedObjectIvE', size : 0.000961 MB
+G4WT1 > Pool ID '15G4CountedObjectIvE', size : 0.000961 MB
+G4WT0 > Pool ID '18NuSDGammaScntSDHit', size : 0.000961 MB
+G4WT1 > Pool ID '18NuSDGammaScntSDHit', size : 0.00192 MB
+G4WT0 > Number of memory pools allocated: 12; of which, static: 0
+G4WT1 > Number of memory pools allocated: 12; of which, static: 0
+G4WT0 > Dynamic pools deleted: 12 / Total memory freed: 0.032 MB
+G4WT0 > ============================================================
+G4WT1 > Dynamic pools deleted: 12 / Total memory freed: 0.077 MB
+G4WT0 > G4Allocator objects are deleted.
+G4WT1 > ============================================================
+G4WT0 > Thread-local UImanager is to be deleted.
+G4WT1 > G4Allocator objects are deleted.
+G4WT0 > There should not be any thread-local G4cout/G4cerr hereafter.
+G4WT1 > Thread-local UImanager is to be deleted.
+G4WT1 > There should not be any thread-local G4cout/G4cerr hereafter.
+RunManager is deleted.RunManager is deleted.
+
+G4 kernel has come to Quit state.
+UserDetectorConstruction deleted.
+UserPhysicsList deleted.
+UserActionInitialization deleted.
+UserWorkerInitialization deleted.
+UserWorkerThreadInitialization deleted.
+UserRunAction deleted.
+UserPrimaryGenerator deleted.
+RunManager is deleting RunManagerKernel.
+G4SDManager deleted.
+EventManager deleted.
+Units table cleared.
+TransportationManager deleted.
+Total navigation history collections cleaned: 3
+G4RNGHelper object is deleted.
+================== Deleting memory pools ===================
+Pool ID '20G4NavigationLevelRep', size : 0.00288 MB
+Pool ID '24G4ReferenceCountedHandleIvE', size : 0.000961 MB
+Pool ID '16G4SmartVoxelNode', size : 0.00481 MB
+Pool ID '17G4SmartVoxelProxy', size : 0.00288 MB
+Pool ID '15G4CountedObjectIvE', size : 0.000961 MB
+Number of memory pools allocated: 5; of which, static: 0
+Dynamic pools deleted: 5 / Total memory freed: 0.012 MB
+============================================================
+G4Allocator objects are deleted.
+UImanager deleted.
+StateManager deleted.
+RunManagerKernel is deleted. Good bye :)
+RunManager is deleted.
+Deleting component buider: PandaUnit ...
+Smart component <<PandaUnit>> has been destroyed.
+Deleting component buider: GammaScnt ...
+Deleting component buider: OptBarrier ...
+Deleting component buider: Reflector ...
+Deleting component buider: GdLayer ...
+Deleting component buider: detBuilder ...
+Smart component <<detBuilder>> has been destroyed.
+Deleting component buider: PmtROUnitZ ...
+Smart component <<PmtROUnitZ>> has been destroyed.
+Deleting component buider: LightGuideBinderZ ...
+Deleting component buider: LightGuideZ ...
+Deleting component buider: PhotoCathodeBinderZ ...
+Deleting component buider: PhotoCathodeZ ...

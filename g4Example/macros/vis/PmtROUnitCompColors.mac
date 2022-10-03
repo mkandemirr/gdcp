@@ -1,0 +1,46 @@
+  #This macro file is invoked from within the vis.mac file
+ 
+ /vis/geometry/set/colour LightGuideXLogic 0 green
+ /vis/geometry/set/colour LightGuideYLogic 0 green
+ /vis/geometry/set/colour LightGuideZLogic 0 green
+ /vis/geometry/set/colour LightGuideBinderXLogic 0 gray
+ /vis/geometry/set/colour LightGuideBinderYLogic 0 gray
+ /vis/geometry/set/colour LightGuideBinderZLogic 0 gray
+ /vis/geometry/set/colour PhotoCathodeXLogic 0 red
+ /vis/geometry/set/colour PhotoCathodeYLogic 0 red
+ /vis/geometry/set/colour PhotoCathodeZLogic 0 red
+ /vis/geometry/set/colour PhotoCathodeBinderXLogic 0 magenta
+ /vis/geometry/set/colour PhotoCathodeBinderYLogic 0 magenta
+ /vis/geometry/set/colour PhotoCathodeBinderZLogic 0 magenta
+ 
+ 
+ #makes all wire frame
+ #/vis/geometry/set/forceWireframe
+ 
+ /vis/geometry/set/forceSolid PmtROUnitXLogic 0 false
+ /vis/geometry/set/forceSolid PmtROUnitYLogic 0 false
+ /vis/geometry/set/forceSolid PmtROUnitZLogic 0 false
+ 
+ /vis/geometry/set/forceSolid LightGuideXLogic 0 true
+ /vis/geometry/set/forceSolid LightGuideYLogic 0 true
+ /vis/geometry/set/forceSolid LightGuideZLogic 0 true
+ 
+ /vis/geometry/set/forceSolid LightGuideBinderXLogic 0 true
+ /vis/geometry/set/forceSolid LightGuideBinderYLogic 0 true
+ /vis/geometry/set/forceSolid LightGuideBinderZLogic 0 true
+ 
+ /vis/geometry/set/forceSolid PhotoCathodeBinderXLogic 0 true
+ /vis/geometry/set/forceSolid PhotoCathodeBinderYLogic 0 true
+ /vis/geometry/set/forceSolid PhotoCathodeBinderZLogic 0 true
+ 
+ /vis/geometry/set/forceSolid PhotoCathodeXLogic 0 true
+ /vis/geometry/set/forceSolid PhotoCathodeYLogic 0 true
+ /vis/geometry/set/forceSolid PhotoCathodeZLogic 0 true
+ 
+ #visibility of components.
+ /vis/geometry/set/visibility PmtROUnitXLogic 0 false
+ /vis/geometry/set/visibility PmtROUnitYLogic 0 false
+ /vis/geometry/set/visibility PmtROUnitZLogic 0 false
+ 
+ 
+ 

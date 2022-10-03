@@ -1,0 +1,7 @@
+#################Polystyrene MatProp#########################3
+/matPropTable/Polystyrene/addProperty WLSCOMPONENT data/materials/FibCore_emissionSpect.txt 
+/matPropTable/Polystyrene/addProperty RINDEX data/materials/FibCore_refSpect.txt 1.58
+/matPropTable/Polystyrene/addProperty WLSABSLENGTH data/materials/FibCore_absSpect.txt 
+
+/matPropTable/Polystyrene/addConstProperty WLSTIMECONSTANT 12 ns
+
