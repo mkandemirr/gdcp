@@ -11,7 +11,7 @@ Geant4 Detector Construction Pattern (GDCP) is a C++ package that provides devel
                           
 *g4Example/*             : This is an example Geant4 application that uses the classes in gdcp and scntDetector directories for geometry 
                          construction. The SOLID and PANDA experiments are chosen as example detector setups. It also uses the NuSD  
-                         framework to simplify the geomtry construction process.
+                         framework to simplify the geometry construction process.
 
 *g4Example/testRun*     : It includes several figures obtained from sample runs of g4Example.
                   
