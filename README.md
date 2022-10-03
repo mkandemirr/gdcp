@@ -58,53 +58,61 @@ Geant4.11.0.0
 ##  How to run the g4Example application?   
 
 **Step 1** <br>
-  Go in your home directory and create a subdirectory named g4Example
+  Go in your home directory and create a subdirectory named g4Example 
+  ```
   $ cd ~
   $ mkdir g4Example
+  ```
 
 **Step 2** <br>
-  Copy the GDCP.zip archive into the g4Example folder you created and extract it in this location.
-  $ cp ~/Downloads/GDCP.zip ./ (assuming GDCP.tar.gz is in the ~/Downloads folder)
+  Copy the GDCP.zip archive into the g4Example folder you created and extract it in this location.  
+  ```
+  $ cp ~/Downloads/GDCP.zip ./ (assuming GDCP.tar.gz is in the ~/Downloads folder) 
   $ unzip GDCP.zip
-
+  ```
+  
 **Step 3** <br>
-  Create a g4Example-build folder in the same directory with g4Example (in this example it is your home directory).
+  Create a g4Example-build folder in the same directory with g4Example (in this example it is your home directory).  
+  ```
   $ mkdir g4Example-build
-
+ ```
+ 
 **Step 4** <br>
-  Now go inside this build directory and run CMake to generate the Makefiles needed to build the application. Two arguments are 
-  passed to CMake. The first argument to CMake is the path to the source directory that includes the CMakeList.txt file. The second    
-  argument is the path to the build directory which the generated make files will be located. CMake will now run to configure the build 
-  and generate Makefiles.
-  $ cd g4Example-build
+Now go inside this build directory and run CMake to generate the Makefiles needed to build the application. Two arguments are passed to CMake. The first argument to CMake is the path to the source directory that includes the CMakeList.txt file. The second argument is the path to the build directory which the generated make files will be located. CMake will now run to configure the build and generate Makefiles.  
+  ```
+  $ cd g4Example-build  
   $ cmake -S path/To/Source -B . 
+  ```
   
 **Step 5** <br>
-  With the Makefile available, we can now build by simply running make: 
-  $ make -jN
+  With the Makefile available, we can now build by simply running make:  
+  ```
+  $ make -jN  
+  ```
   CMake generated Makefiles support parallel builds, so N can be set to the number of cores on your machine (e.g. if you have four core 
   processor, you could set N to 4).
 
 **Step 6** <br>
   The application is now ready to run. If you now list the contents of your build directory, you will notice that the executable Main has 
   been created. The program can be executed in two modes: interactive and batch. The first is for visualization, and the second is for 
-  collecting statistics.
- 
+  collecting statistics.  
+   ```
     "-b": run in batch mode,  need an argument to specify the macro file corresponding to the selected detector.
     "-i": run in interactive, need an argument to specify the macro file corresponding to the selected detector.
     "-r": Set the seed
     "-t": specify the number of threads (note: -t option is available only for multi-threaded mode.) 
-
+ ```
    Two types of detectors are available. Arrange the g4Example/macros/detectorBuilder.mac file for setting 
    up the selected detector at desired configuration. If you change the detector type, for example, from panda to solid or vice-versa, 
    do not forget to change photosensor type in the detectorBuilder.mac. PANDA uses PMTs and SOLID uses SiPMs. Default is SOLID 
-   experiment. Followings are some examples: 
-    ./Main -i solid
+   experiment. Followings are some examples:  <br>
+   ```
+    ./Main -i solid 
     ./Main -b solid 
     ./Main -i panda 
     ./Main -b panda
     ./Main       
-
+  ```
 ##  Contacts 
 
 If you have any questions or wish to notify of updates and/or modification please contact:
