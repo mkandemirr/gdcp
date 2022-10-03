@@ -1,5 +1,6 @@
                          GDCP
 =========================*****================================
+
 Geant4 Detector Construction Pattern (GDCP) is a C++ package that provides developers with a set of useful classes they can utilize during the detector construction phase of a Geant4 application. 
              
                   The package structure:
