@@ -31,17 +31,17 @@ Geant4 Detector Construction Pattern (GDCP) is a C++ package that provides devel
 *g4Example/materials*    : It includes numerous example concreate material builder classes derived from the VMaterialBuilder class.
                                                   
 *g4Example/macros*       : It includes several macro files for the configuration of: <br>
-                         - detector components such as size and material choice.  <br>
-                            - g4Example/macros/BoxComponent <br>
-                            - g4Example/macros/TubsComponent <br>
-                            - g4Example/macros/TrdComponent <br>
-                         - optical properties of materials and surfaces <br>
-                              - g4Example/macros/matPropTable <br>
-                              - g4Example/macros/opticalSurface <br>
-                         - optical readout components such as PMT and SiPM <br>
-                              - g4Example/macros/readout <br>
-                         - detector components visualization. <br>   
-                              - g4Example/macros/vis  <br>
+- detector components such as size and material choice.  
+  - *g4Example/macros/BoxComponent* 
+  - *g4Example/macros/TubsComponent* 
+  - *g4Example/macros/TrdComponent* 
+- optical properties of materials and surfaces 
+  - *g4Example/macros/matPropTable* 
+  - *g4Example/macros/opticalSurface* 
+- optical readout components such as PMT and SiPM 
+  - *g4Example/macros/readout* 
+- detector components visualization.   
+  - *g4Example/macros/vis*  
                               
 *g4Example/CMakeList*    : It contains commands which describe how to build the g4Example application.
 
